@@ -1,0 +1,36 @@
+<div class="login">
+    <h2>Login</h2>
+ 
+    <div class="alert alert-info">
+        Use admin/admin to connect
+    </div>
+
+    <form name="form">
+        <div>
+            <div class="mdl-textfield mdl-js-textfield">
+                <input #usernameinput (change)="setUserName(usernameinput.value)" class="mdl-textfield__input" type="text" >
+                <label class="mdl-textfield__label" for="username">ToDo Username</label>
+            </div>
+            
+            <div class="mdl-textfield mdl-js-textfield">
+                <input #passwordinput (change)="setPassword(passwordinput.value)" class="mdl-textfield__input" type="password" >
+                <label class="mdl-textfield__label" for="password">Password</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" (click)="login()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Login</button>
+            <button [disabled]="loading" (click)="logout()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">Logout</button><br/>
+            <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+        <div *ngIf="error" class="alert alert-error">{{error}}</div>
+    </form>
+
+    <div id="login-info" class="alert alert-info">
+        Username: {{username}}<br/>
+        Password: {{password}}<br/>
+        Token: <div class="mdl-textfield mdl-js-textfield" id="token-field-container">
+                <textarea class="mdl-textfield__input" type="text" rows= "3" id="token-field" >{{token}}</textarea>
+            </div>
+    </div>
+
+</div>

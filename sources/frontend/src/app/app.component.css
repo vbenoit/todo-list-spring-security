@@ -1,0 +1,14 @@
+#left-container {
+	width: 28%;
+	float: left;
+	height: 100%;
+	background-color: #f8f7b6 !important;
+	position: fixed;
+}
+
+#right-container {
+	width: 68%;
+	min-width: 320px;
+	float: right;
+	height: 100%;
+}
